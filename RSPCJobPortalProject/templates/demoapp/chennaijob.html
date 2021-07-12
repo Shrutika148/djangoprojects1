@@ -1,0 +1,37 @@
+{%load static%}
+<html>
+<head>
+<link rel="stylesheet" href="{%static "css/job.css"%}">
+</head>
+ <body bgcolor="wheat">
+    <h1>Chennai Jobs Information</h1>
+    <hr>
+{%if cjobs%}
+<table border="1">
+<thead>
+ <th>Date</th>
+ <th>Company</th>
+ <th>Title</th>
+ <th>Eligibility</th>
+ <th>Address</th>
+ <th>Email ID</th>
+ <th>Mobile Number</th>
+</thead>
+{%for i in cjobs%}
+ <tr>
+ <td>{{i.date}}</td>
+ <td>{{i.company}}</td>
+ <td>{{i.title}}</td>
+ <td>{{i.eligibility}}</td>
+ <td>{{i.address}}</td>
+ <td>{{i.email}}</td>
+ <td>{{i.mobno}}</td>
+</tr>
+{%endfor%}
+
+{%else%}
+
+<h2>No Job Records Found in Chennai!!!</h2>
+{%endif%}
+</body>
+</html>
